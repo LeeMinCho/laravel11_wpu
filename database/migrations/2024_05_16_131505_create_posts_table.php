@@ -22,6 +22,10 @@ return new class extends Migration
             );
             $table->string('slug')->unique();
             $table->text('body');
+            $table->foreignId('category_id')->constrained(
+                table: 'categories',
+                indexName: 'posts_category_id',
+            );
             $table->timestamps();
         });
     }
