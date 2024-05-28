@@ -8,11 +8,13 @@
                     {{ $post['title'] }}
                 </h2>
             </a>
-            <div class="text-base text-gray-500">
+            <div>
                 By
-                <a class="hover:underline" href="/authors/{{ $post->author->id }}">{{ $post->author->name }}</a>
+                <a class="hover:underline text-base text-gray-500"
+                    href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a>
                 in
-                <a class="hover:underline" href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                <a class="hover:underline text-base text-gray-500"
+                    href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 |
                 {{ $post->created_at->diffForHumans() }}
             </div>
